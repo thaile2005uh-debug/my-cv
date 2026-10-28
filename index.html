@@ -1,1 +1,575 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV of Le Quoc Thai, Information Technology student.">
+    <title>Le Quoc Thai - CV</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e9eef2;
+            color: #263746;
+            padding: 30px 15px;
+        }
+
+        .cv-container {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            max-width: 1000px;
+            min-height: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        /* LEFT COLUMN */
+        .left-column {
+            background: #29465b;
+            color: #ffffff;
+            padding: 40px 28px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .profile-photo {
+            width: 145px;
+            height: 145px;
+            margin: 0 auto 20px;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            background: #dce7ed;
+            color: #29465b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile h1 {
+            font-size: 27px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .job-title {
+            color: #d4e3ed;
+            font-size: 13px;
+            line-height: 1.7;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .left-section {
+            margin-bottom: 32px;
+        }
+
+        .left-section h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding-bottom: 10px;
+            margin-bottom: 17px;
+            border-bottom: 2px solid #8ca9bb;
+        }
+
+        .contact-item {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 13px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #c8dce8;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .about-text {
+            color: #edf3f7;
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -2px;
+            color: #b7d5e7;
+            font-size: 18px;
+        }
+
+        /* RIGHT COLUMN */
+        .right-column {
+            padding: 42px 38px;
+        }
+
+        .right-section {
+            margin-bottom: 32px;
+        }
+
+        .right-section h2 {
+            color: #29465b;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #29465b;
+        }
+
+        .right-section h3 {
+            color: #29465b;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 9px;
+        }
+
+        .right-section p {
+            color: #405463;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .right-section p strong {
+            color: #263746;
+        }
+
+        .education-item,
+        .experience-item,
+        .project-item {
+            padding-left: 16px;
+            border-left: 3px solid #b7cbd8;
+        }
+
+        .section-subtitle {
+            color: #64839a !important;
+            font-style: italic;
+            margin-top: -4px;
+        }
+
+        .details-list {
+            padding-left: 19px;
+            margin: 8px 0 10px;
+            color: #405463;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .details-list li {
+            margin-bottom: 5px;
+        }
+
+        /* TECHNICAL SKILLS */
+        .technical-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .skill-group {
+            min-width: 0;
+            padding: 17px;
+            background: #f3f6f8;
+            border-radius: 8px;
+            border-top: 3px solid #64839a;
+        }
+
+        .skill-group h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .right-skills-list {
+            padding-left: 17px;
+            color: #405463;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .right-skills-list li {
+            margin-bottom: 9px;
+            overflow-wrap: anywhere;
+        }
+
+        .right-skills-list span {
+            display: block;
+            color: #64839a;
+            font-size: 11px;
+            font-style: italic;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #71818d;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) and (min-width: 701px) {
+            .cv-container {
+                grid-template-columns: 33% 67%;
+            }
+
+            .left-column {
+                padding: 30px 20px;
+            }
+
+            .right-column {
+                padding: 35px 25px;
+            }
+
+            .technical-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            body {
+                padding: 0;
+            }
+
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-column {
+                padding: 35px 28px;
+            }
+
+            .right-column {
+                padding: 35px 28px;
+            }
+
+            .technical-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PRINT */
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                padding: 0;
+                background: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cv-container {
+                width: 100%;
+                max-width: none;
+                min-height: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .left-column {
+                padding: 25px 18px;
+            }
+
+            .right-column {
+                padding: 25px 24px;
+            }
+
+            .left-section,
+            .right-section,
+            .skill-group {
+                break-inside: avoid;
+            }
+
+            .right-section {
+                margin-bottom: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cv-container">
+
+        <!-- LEFT COLUMN -->
+        <aside class="left-column">
+
+            <!-- PROFILE -->
+            <header class="profile">
+                <div class="profile-photo">
+                    <!-- To add your photo:
+                    1. Put avatar.jpg in the same folder as index.html.
+                    2. Replace QT with:
+                    <img src="avatar.jpg" alt="Le Quoc Thai">
+                    -->
+                    QT
+                </div>
+
+                <h1>Le Quoc Thai</h1>
+
+                <p class="job-title">
+                    Information Technology Student
+                </p>
+            </header>
+
+            <!-- CONTACT -->
+            <section class="left-section">
+                <h2>Contact</h2>
+
+                <div class="contact-item">
+                    <strong>Date of Birth</strong>
+                    14 October 2005
+                </div>
+
+                <div class="contact-item">
+                    <strong>Gender</strong>
+                    Male
+                </div>
+
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:0852123517">0852123517</a>
+                    <br>
+                    <a href="tel:0947393997">0947393997</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:thaile2005uh@gmail.com">
+                        thaile2005uh@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/" target="_blank"
+                       rel="noopener noreferrer">
+                        https://thaile2005uh-debug.github.io/my-cv/?utm_source=chatgpt.com
+                      https://github.com/thaile2005uh-debug/my-cv?utm_source=chatgpt.com
+                    </a>
+                </div>
+            </section>
+
+            <!-- ABOUT ME -->
+            <section class="left-section">
+                <h2>About Me</h2>
+
+                <p class="about-text">
+                    I am a curious Information Technology student who
+                    enjoys exploring new ideas and learning new things.
+                    I am interested in technology, artificial
+                    intelligence, gaming, music, design, and reading.
+                    I also enjoy solving problems and discovering how
+                    things work. I hope to expand my knowledge and
+                    improve myself through continuous learning.
+                </p>
+            </section>
+
+            <!-- PERSONAL SKILLS -->
+            <section class="left-section">
+                <h2>Personal Skills</h2>
+
+                <ul class="skills-list">
+                    <li>Communication</li>
+                    <li>Time Management and Planning</li>
+                    <li>Adaptability</li>
+                    <li>Curiosity and Willingness to Learn</li>
+                </ul>
+            </section>
+
+        </aside>
+
+        <!-- RIGHT COLUMN -->
+        <main class="right-column">
+
+            <!-- EDUCATION -->
+            <section class="right-section">
+                <h2>Education</h2>
+
+                <div class="education-item">
+                    <h3>
+                        University of Transport Ho Chi Minh City - UT
+                    </h3>
+
+                    <p>
+                        <strong>Faculty:</strong>
+                        Information Technology
+                    </p>
+
+                    <p>
+                        <strong>Major:</strong>
+                        Information Technology
+                    </p>
+
+                    <p>
+                        <strong>Academic Status:</strong>
+                        Currently studying
+                    </p>
+
+                    <p>
+                        <strong>Classification:</strong>
+                        Not yet determined
+                    </p>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section class="right-section">
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+                    <h3>Teaching Assistant</h3>
+
+                    <p class="section-subtitle">
+                        High School Experience
+                    </p>
+
+                    <ul class="details-list">
+                        <li>
+                            Supported teaching and learning activities.
+                        </li>
+                        <li>
+                            Assisted students with lessons and exercises.
+                        </li>
+                        <li>
+                            Practiced communication and teamwork.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CAREER OBJECTIVE -->
+            <section class="right-section">
+                <h2>Career Objective</h2>
+
+                <p>
+                    I want to strengthen my technical knowledge and
+                    develop practical skills in Information Technology.
+                    I am willing to learn new technologies, improve
+                    my problem-solving abilities, and gain experience
+                    through academic projects and teamwork. My goal
+                    is to build a strong foundation for my future
+                    career in IT.
+                </p>
+            </section>
+
+            <!-- TECHNICAL SKILLS -->
+            <section class="right-section">
+                <h2>Technical Skills</h2>
+
+                <div class="technical-skills-grid">
+
+                    <div class="skill-group">
+                        <h3>Programming and Design</h3>
+
+                        <ul class="right-skills-list">
+                            <li>C++ <span>Beginner</span></li>
+                            <li>HTML <span>Beginner</span></li>
+                            <li>Unity <span>Beginner</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Development Tools</h3>
+
+                        <ul class="right-skills-list">
+                            <li>Git <span>Beginner</span></li>
+                            <li>Docker <span>Beginner</span></li>
+                            <li>Postman <span>Beginner</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ACADEMIC PROJECT -->
+            <section class="right-section">
+                <h2>Academic Project</h2>
+
+                <div class="project-item">
+                    <h3>Fire Detection System</h3>
+
+                    <p class="section-subtitle">
+                        Group Academic Project
+                    </p>
+
+                    <p>
+                        <strong>Description:</strong>
+                        A group project involving a fire detection
+                        application for a software testing course.
+                    </p>
+
+                    <p>
+                        <strong>Current Status:</strong>
+                        In progress
+                    </p>
+
+                    <p>
+                        <strong>Tools:</strong>
+                        Git, Docker, and Postman
+                    </p>
+                </div>
+            </section>
+
+            <div class="footer">
+                Curriculum Vitae | Le Quoc Thai
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
+
